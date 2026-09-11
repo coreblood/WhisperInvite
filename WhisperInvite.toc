@@ -1,0 +1,8 @@
+## Interface: 30300
+## Title: WhisperInvite
+## Notes: Invites players who whisper a keyword; auto-accepts invites from greenlighted players. Movable minimap button and options panel.
+## Author: Custom
+## Version: 1.3.0
+## SavedVariables: WhisperInviteDB
+
+WhisperInvite.lua
