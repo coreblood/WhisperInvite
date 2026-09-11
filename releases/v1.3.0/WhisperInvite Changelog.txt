@@ -1,0 +1,31 @@
+WhisperInvite — Changelog
+=========================
+
+v1.3.0 (2026-09-08)
+  - Keyword matching is now ALWAYS exact — the whisper must be exactly the keyword (case-insensitive, spaces trimmed). The accident-prone “contains” mode (keyword anywhere inside the whisper) is removed entirely; /wi mode is gone, and saved settings with contains mode simply behave as exact.
+  - Options panel reordered: the Keyword field sits directly under the whisper-invite checkboxes with a one-line exact-match hint, the greenlist-scope checkbox follows it, and the former “Exact match only” checkbox is removed with the mode.
+
+v1.2.1 (2026-09-08)
+  - Options panel: the “Exact match only” label no longer runs past the panel edge; its explanation moved to its own grey line beneath the checkbox.
+
+v1.2.0 (2026-09-07)
+  - Invite scope added (/wi scope greenlist|everyone, also in the options panel). Default is GREENLIST: only greenlighted players are invited when they whisper the keyword; everyone else is silently ignored. “Everyone” restores the open behaviour for pugs. Minimap tooltip and /wi status show the active scope.
+  - This closes the “anyone whispering inv gets invited” hazard: the default keyword is extremely common and the enabled state persists across sessions, so an open listener could fire on strangers.
+
+v1.1.3 (2026-09-07)
+  - The gold ring now actually circles the icon: canonical Blizzard/LibDBIcon layout, icon corners trimmed so they don't stick out of the round border, standard hover highlight added.
+
+v1.1.2 (2026-09-07)
+  - Minimap button placement is free-form: Shift+drag drops the button at the exact release spot (x/y from minimap center) instead of snapping to a computed circle — works with minimap addons that scale rather than resize the map. Loosely clamped so it cannot be dragged off-screen. Old stored angle migrates once automatically.
+
+v1.1.1 (2026-09-06)
+  - Minimap button no longer lands inside the circle on scaled/resized minimaps: the anchor radius is computed from the minimap's actual size and re-anchors on PLAYER_ENTERING_WORLD.
+
+v1.1 (2026-09-06)
+  - Case-insensitive plain-text keyword matching with exact (default) and contains modes, immune to Lua pattern characters.
+  - Shift-drag no longer toggles the addon; saved-variable defaults merge recursively; drag OnUpdate only runs while dragging; /wi on and /wi off are real commands; helpers are file-locals; tooltip refreshes live; invite attempts guarded when you lack invite rights or the group is full (with local feedback and a “group is full” whisper when auto-reply is on).
+  - Options panel added (Interface → AddOns, right-click minimap button, or /wi options): all toggles, keyword editbox, scrollable greenlight-list editor.
+  - Auto-accept from greenlighted players added, with /wi allow, disallow, list, accept. New slash commands incl. reply, status, options and the /whisperinvite alias. First MANUAL.md and CHANGELOG.md.
+
+v1.0
+  - Initial version: keyword whisper-invite (substring match), movable minimap button, /wi slash command.
